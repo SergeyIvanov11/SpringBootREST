@@ -26,11 +26,6 @@ public class AuthorizationController {
         return service.getAuthorities(user);
     }
 
-    @GetMapping("/authorize")
-    public List<Authorities> getAuthorities(@RequestParam("user") String user, @RequestParam("password") String password) {
-        return service.getAuthorities(user, password);
-    }
-
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> invalidCredentialsHandler(InvalidCredentials e) {
         return new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
