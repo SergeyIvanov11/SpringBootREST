@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AuthorizationService {
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     public List<Authorities> getAuthorities(String username, String password) {
         if (isEmpty(username)) {
