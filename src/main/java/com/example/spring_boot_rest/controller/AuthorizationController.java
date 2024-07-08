@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 public class AuthorizationController {
     @Autowired
-    AuthorizationService service;
+    private AuthorizationService service;
 
     @GetMapping("/authorize")
     public List<Authorities> getAuthorities(@Valid User user) {
