@@ -8,14 +8,16 @@ public class User {
     @NotNull
     @NotBlank
     @Size(min = 2, max = 40)
-    String username;
-    String password;
-    Role role;
+    private String username;
+    private tring password;
+    private Role role;
 
     public User(String username, String password, Role role) {
         this.username = username;
         this.password = password;
-        this.role = role;
+        if(password.equals("")){
+            this.role = Role.ANONYMOUS;
+        } else this.role = role;
     }
 
     public String getUsername() {
